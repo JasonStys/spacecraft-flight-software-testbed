@@ -1,0 +1,114 @@
+{
+  "brownout": {
+    "summary": {
+      "committed": 90,
+      "duplicates": 1,
+      "lost_payloads": 0,
+      "max_sensor_age": 1,
+      "missing_frames": 0,
+      "payloads": 90,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 0,
+      "safe_ticks": 40,
+      "unserviced": 0
+    },
+    "trajectory_sha256": "48d8c5a401ff8bfab76b7b62c2d3fc59514b6ad3d7594d022932691444d01e19"
+  },
+  "checkpoint-corrupt": {
+    "summary": {
+      "committed": 35,
+      "duplicates": 1,
+      "lost_payloads": 55,
+      "max_sensor_age": 1,
+      "missing_frames": 0,
+      "payloads": 35,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 1,
+      "safe_ticks": 38,
+      "unserviced": 1
+    },
+    "trajectory_sha256": "8eff570cae43297efc732c7c57572844eb92107ef1754900e7fb62def9f68e43"
+  },
+  "command-corrupt": {
+    "summary": {
+      "committed": 110,
+      "duplicates": 1,
+      "lost_payloads": 0,
+      "max_sensor_age": 1,
+      "missing_frames": 0,
+      "payloads": 110,
+      "reference_payloads": 110,
+      "rejected": 1,
+      "resets": 0,
+      "safe_ticks": 0,
+      "unserviced": 0
+    },
+    "trajectory_sha256": "a53f8d246c6a48b959e7b8824f36a7824e5ed2ba5d7c4408a839ced462a6466e"
+  },
+  "nominal": {
+    "summary": {
+      "committed": 110,
+      "duplicates": 1,
+      "lost_payloads": 0,
+      "max_sensor_age": 1,
+      "missing_frames": 0,
+      "payloads": 110,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 0,
+      "safe_ticks": 0,
+      "unserviced": 0
+    },
+    "trajectory_sha256": "3b860fdb0b0f37933192717c07d92236e7faa895aa760f64d00f45fc52958a69"
+  },
+  "sensor-stale": {
+    "summary": {
+      "committed": 93,
+      "duplicates": 1,
+      "lost_payloads": 0,
+      "max_sensor_age": 16,
+      "missing_frames": 0,
+      "payloads": 93,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 0,
+      "safe_ticks": 35,
+      "unserviced": 0
+    },
+    "trajectory_sha256": "effd5bc37680ea4723436b586b1dd0fd8007cdd9c9568a1e726b938712f89ae4"
+  },
+  "telemetry-gap": {
+    "summary": {
+      "committed": 110,
+      "duplicates": 1,
+      "lost_payloads": 0,
+      "max_sensor_age": 1,
+      "missing_frames": 12,
+      "payloads": 110,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 0,
+      "safe_ticks": 0,
+      "unserviced": 0
+    },
+    "trajectory_sha256": "71bc1cfbe1c02d37b9cec7cbd786a9aad1f504fbe4d478207187a5cf0ff7208e"
+  },
+  "watchdog-hang": {
+    "summary": {
+      "committed": 87,
+      "duplicates": 1,
+      "lost_payloads": 3,
+      "max_sensor_age": 4,
+      "missing_frames": 0,
+      "payloads": 87,
+      "reference_payloads": 110,
+      "rejected": 0,
+      "resets": 1,
+      "safe_ticks": 34,
+      "unserviced": 1
+    },
+    "trajectory_sha256": "b2ab7e427ccbac19a1166df0b7b885dd64150c86221186e2769a1749b3d4cee1"
+  }
+}

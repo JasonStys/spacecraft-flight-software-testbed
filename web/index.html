@@ -1,0 +1,264 @@
+<!-- Flight executive teaching console by Jason Stys. Sections: configure, replay, evidence, help.
+     IDs/variables and source lines: docs/CODE_INDEX.md. No external fonts, trackers or device links. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Software-only spacecraft executive fault and recovery testbed by Jason Stys."
+    />
+    <title>Spacecraft Flight Software Testbed · Jason Stys</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to experiments</a>
+    <header>
+      <a class="brand" href="#main"><span class="mark">✳</span> FLIGHT / TESTBED</a>
+      <nav aria-label="Main">
+        <a href="#evidence">Evidence</a><a href="#help">Field guide</a
+        ><a
+          href="https://github.com/JasonStys/spacecraft-flight-software-testbed"
+          target="_blank"
+          rel="noreferrer"
+          >Source ↗</a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">MISSION ASSURANCE / SOFTWARE-IN-THE-LOOP / LAB 01</p>
+          <h1>Break a task.<br /><em>Prove recovery.</em></h1>
+          <p class="intro">
+            A small executive. A controlled fault. A complete replay of what survived—and what
+            didn’t.
+          </p>
+          <p class="boundary">SOFTWARE-ONLY · SYNTHETIC DATA · NOT FLIGHT QUALIFIED</p>
+        </div>
+        <div class="orbiter" aria-hidden="true">
+          <svg viewBox="0 0 420 240">
+            <ellipse
+              cx="210"
+              cy="120"
+              rx="185"
+              ry="85"
+              fill="none"
+              stroke="currentColor"
+              stroke-dasharray="3 8"
+            />
+            <path d="M26 190 390 45M37 42 376 195" stroke="currentColor" opacity=".25" />
+            <g transform="translate(210 120) rotate(-25)">
+              <path d="M-150-35h95v70h-95zM55-35h95v70H55z" fill="#163d53" stroke="#6edbc6" />
+              <path
+                d="M-125-35v70m25-70v70m25-70v70m150-70v70m25-70v70m25-70v70M-150 0h95M55 0h95"
+                stroke="#6edbc6"
+                opacity=".5"
+              />
+              <path d="M-55-48H55V48H-55z" fill="#21344a" stroke="#e1eee9" />
+              <path
+                d="m-55-48 25-20h85v96L55 48M55-48 85-68M85 28 55 48"
+                fill="none"
+                stroke="#e1eee9"
+              />
+              <circle r="17" fill="#0c1a2b" stroke="#6edbc6" />
+              <path d="M0-68v-30m-18 0h36" stroke="#e1eee9" />
+            </g>
+            <circle cx="350" cy="63" r="4" fill="#6edbc6" /></svg
+          ><span>FSW-01 / VIRTUAL VEHICLE</span><span>NO HARDWARE CONNECTED</span>
+        </div>
+      </section>
+      <section class="config panel" aria-labelledby="config-heading">
+        <div class="section-title">
+          <h2 id="config-heading">01 / Configure the experiment</h2>
+          <span>Finite fixtures. Reproducible runs.</span>
+        </div>
+        <form id="config">
+          <div class="settings">
+            <label class="scenario"
+              >Fault scenario<select id="scenario" name="scenario"></select></label
+            ><label>Duration / ticks<select id="duration" name="duration"></select></label
+            ><label>Inject at / tick<select id="fault_tick" name="fault_tick"></select></label
+            ><label>Watchdog / ticks<select id="watchdog" name="watchdog"></select></label
+            ><label
+              >Checkpoint / ticks<select
+                id="checkpoint_period"
+                name="checkpoint_period"
+              ></select></label
+            ><label
+              >Science sample / ticks<select id="sample_period" name="sample_period"></select
+            ></label>
+          </div>
+          <div class="actions">
+            <p id="scenario-description">Loading reviewed fixtures…</p>
+            <button type="button" id="reset">Defaults</button
+            ><button type="submit" id="apply">Run experiment ↗</button>
+          </div>
+        </form>
+      </section>
+      <p id="status" role="status" aria-label="Experiment status" aria-live="polite">
+        Preparing local executive…
+      </p>
+      <button id="retry" hidden>Retry experiment</button>
+      <div id="results" hidden>
+        <section class="replay panel" aria-labelledby="replay-heading">
+          <div class="section-title">
+            <h2 id="replay-heading">02 / Replay & inspect</h2>
+            <label class="perspective"
+              >Perspective<select id="perspective">
+                <option value="truth">Onboard truth (simulator oracle)</option>
+                <option value="ground">Received downlink only</option>
+              </select></label
+            >
+          </div>
+          <div class="transport">
+            <button id="play" type="button">Play replay</button
+            ><label for="tick">Tick <output id="tick-label">0</output></label
+            ><input
+              id="tick"
+              aria-label="Replay tick"
+              type="range"
+              min="0"
+              max="240"
+              value="0"
+            /><span id="frame-state">INITIAL BOOT</span>
+          </div>
+          <div class="state-strip" aria-label="Executive modes">
+            <span data-mode="BOOT">BOOT</span><span>→</span><span data-mode="STANDBY">STANDBY</span
+            ><span>⇄</span><span data-mode="SCIENCE">SCIENCE</span><span>↘</span
+            ><span data-mode="SAFE">SAFE / LATCHED</span>
+          </div>
+          <div class="metrics">
+            <article>
+              <h3>Executive mode</h3>
+              <strong id="mode">BOOT</strong>
+              <p id="boot">Boot 1 · uptime 0 ticks</p>
+            </article>
+            <article>
+              <h3>Working / committed</h3>
+              <strong id="payloads">0 / 0</strong>
+              <p id="loss">0 volatile payloads lost</p>
+            </article>
+            <article>
+              <h3>Watchdog age</h3>
+              <strong id="watchdog-age">0 ticks</strong>
+              <p>Independent supervisor</p>
+            </article>
+            <article>
+              <h3>Sensor freshness</h3>
+              <strong id="sensor">Unavailable</strong>
+              <p id="power">Power index 900 · synthetic</p>
+            </article>
+          </div>
+          <div class="chart-heading">
+            <h3>Payload progress / complete run</h3>
+            <div class="legend">
+              <span>Working</span><span>Committed</span><span>Nominal reference</span>
+            </div>
+          </div>
+          <svg
+            id="chart"
+            viewBox="0 0 900 200"
+            role="img"
+            aria-label="Payload progress: working, committed and nominal reference; missing downlinks break lines"
+          ></svg>
+          <p class="chart-note">
+            Counters, not scientific measurements. The chart shows the entire run; the cursor
+            follows replay. Missing downlinks are gaps, not zeros. Nominal reference is always
+            simulator truth.
+          </p>
+        </section>
+        <section id="evidence" class="evidence">
+          <div class="panel">
+            <div class="section-title">
+              <h2>03 / Recovery evidence</h2>
+              <span>Full-run observer summary</span>
+            </div>
+            <div id="summary" class="summary"></div>
+            <p class="small">
+              Observer counters survive resets. Onboard progress restores only from the last valid
+              checkpoint; SAFE stays latched until the scheduled healthy resume command.
+            </p>
+            <div class="downloads">
+              <a id="download-json" download="flight-evidence.json">JSON evidence ↓</a
+              ><a id="download-csv" download="flight-samples.csv">CSV frames ↓</a
+              ><a id="download-html" download="flight-evidence.html">HTML report ↓</a>
+            </div>
+            <details>
+              <summary>Provenance & deterministic replay</summary>
+              <p>
+                Trajectory hash excludes build identity; evidence ID includes the native worker
+                hash. Exact integers make cross-platform replay comparison possible.
+              </p>
+              <code id="fingerprint"></code>
+            </details>
+          </div>
+          <div class="panel">
+            <div class="section-title">
+              <h2>Event ledger</h2>
+              <label class="toggle"
+                ><input id="checkpoints" type="checkbox" /> Include periodic saves</label
+              >
+            </div>
+            <ol id="events" class="events"></ol>
+            <p class="small">
+              The ledger is an omniscient simulator trace, not a claim that ground received every
+              event.
+            </p>
+          </div>
+        </section>
+      </div>
+      <section id="help" class="help">
+        <p class="eyebrow">FIELD GUIDE</p>
+        <h2>Know what this lab proves.</h2>
+        <div class="help-grid">
+          <details open>
+            <summary>Getting started</summary>
+            <p>
+              Choose a fault, run the experiment, then scrub the replay. Compare working data with
+              committed checkpoints. Switch perspective to see why missing packets must not be
+              interpreted as zero measurements.
+            </p>
+          </details>
+          <details>
+            <summary>Faults & recovery</summary>
+            <p>
+              A watchdog resets a hung executive. Stale sensors or a low synthetic power index enter
+              latched SAFE mode. A corrupt checkpoint is rejected. The explicit resume at fault tick
+              + 40 restores science only after health checks.
+            </p>
+          </details>
+          <details>
+            <summary>Model boundaries</summary>
+            <p>
+              Logical ticks are not seconds. This is not an RTOS, spacecraft dynamics model, cFS
+              distribution, certified system, guidance tool or device controller. CRC detects
+              accidental corruption, not malicious tampering. All data is invented.
+            </p>
+          </details>
+          <details>
+            <summary>Privacy & portable app</summary>
+            <p>
+              Runs stay on this PC. No account, analytics, cloud service or hardware connection.
+              Only finite settings are saved in browser storage when available. Download the
+              matching OS bundle from Releases; extract it and launch the executable. Builds are
+              unsigned; don’t disable operating-system protections.
+            </p>
+            <a href="https://github.com/JasonStys/spacecraft-flight-software-testbed/releases"
+              >Portable releases ↗</a
+            >
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span
+        >DESIGNED & ENGINEERED BY
+        <a href="https://github.com/JasonStys" rel="noreferrer" target="_blank"
+          >Jason Stys ↗</a
+        ></span
+      ><span>MIT / ORIGINAL TEACHING IMPLEMENTATION / v1.0.0</span>
+    </footer>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+# File catalog
+
+Every tracked-intent file; dependencies/private outputs are excluded.
+
+- `.gitattributes` — Normalize source text to LF and preserve binary screenshot assets.
+- `.github/workflows/codeql.yml` — # Security analysis by Jason Stys. Jobs: C++, Python and JavaScript/TypeScript CodeQL.
+- `.github/workflows/release.yml` — # Manual draft-release packaging by Jason Stys. Never publishes automatically.
+- `.github/workflows/validate.yml` — # Validation by Jason Stys. Jobs: executive contracts, browser integration, portable native smoke.
+- `.gitignore` — Exclude dependencies, runtime/private data, histories and generated builds from Git.
+- `.prettierignore` — Exclude generated indexes, locks and build/dependency trees from formatting.
+- `.prettierrc.json` — Shared readable browser/configuration/Markdown formatting options.
+- `CMakeLists.txt` — # Software-only executive by Jason Stys. Targets/options and variables: docs/CODE_INDEX.md.
+- `LICENSE` — MIT License
+- `README.md` — # Spacecraft Flight Software Testbed
+- `docs/API.md` — # Local API and evidence schema
+- `docs/ARCHITECTURE.md` — # Architecture and decisions
+- `docs/EXECUTIVE.md` — # Executive model and limits
+- `docs/RELEASE.md` — # Release, operation and rollback
+- `docs/SECURITY.md` — # Security and privacy boundaries
+- `docs/THIRD_PARTY.md` — # References and license notices
+- `docs/USER_GUIDE.md` — # User guide
+- `docs/VALIDATION.md` — # Validation and test evidence
+- `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/images/recovery.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
+- `flightlab/__init__.py` — """Software-only executive evidence application by Jason Stys; see docs/CODE_INDEX.md."""
+- `flightlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
+- `flightlab/engine.py` — """Bounded native worker bridge and deterministic evidence by Jason Stys.
+- `flightlab/reports.py` — """Portable JSON/CSV/HTML evidence and transactional history by Jason Stys.
+- `flightlab/resources/history.sql` — -- Immutable local experiment history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
+- `flightlab/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
+- `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
+- `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE
+- `native/checkpoint.cpp` — /* Bounded portable checkpoint serialization by Jason Stys.
+- `native/checkpoint.hpp` — /* Canonical teaching checkpoint codec by Jason Stys. NOT a flight or secure-storage format.
+- `native/cli.cpp` — /* Fixed JSON executive worker by Jason Stys. Functions: integer, emit, main.
+- `native/core.cpp` — /* Deterministic executive, supervisor and simulated ports by Jason Stys.
+- `native/core.hpp` — /* Simulated spacecraft executive contracts by Jason Stys.
+- `native/tests.cpp` — /* Release-active native contracts and bounded byte fuzzing by Jason Stys.
+- `package-lock.json` — Resolved npm dependency graph with download integrity values.
+- `package.json` — Pinned browser dependencies, Node version contract and build/test/audit scripts.
+- `playwright.config.ts` — /** Cross-engine website integration configuration by Jason Stys.
+- `pyproject.toml` — Python metadata, supported runtimes, strict lint/type/test and coverage gates.
+- `requirements-dev.in` — Scientific test, type, style, audit and packaging dependency inputs.
+- `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
+- `requirements.in` — Standard-library-only Python runtime declaration (no third-party runtime packages).
+- `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
+- `tests/test_engine.py` — """Independent executive, failure-boundary and replay contracts by Jason Stys.
+- `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
+- `tests/ui.spec.ts` — /* Production-browser integration and accessibility tests by Jason Stys.
+- `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
+- `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
+- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
+- `tools/smoke_app.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
+- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/validate_evidence.py` — """Cross-platform golden replay and measured timing evidence by Jason Stys.
+- `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
+- `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
+- `vitest.config.ts` — /** Pure display-logic tests by Jason Stys; configuration inventory: docs/CODE_INDEX.md. */
+- `web/env.d.ts` — /** Vite static asset typing by Jason Stys; reference declarations: docs/CODE_INDEX.md. */
+- `web/index.html` — <!-- Flight executive teaching console by Jason Stys. Sections: configure, replay, evidence, help.
+- `web/main.ts` — /* Local experiment orchestration and replay UI by Jason Stys.
+- `web/model.test.ts` — /* Pure rendering and preference contracts by Jason Stys.
+- `web/model.ts` — /* Pure display transforms and finite preferences by Jason Stys.
+- `web/style.css` — /* Responsive mission-assurance console by Jason Stys.
+- `web/types.ts` — /* Browser evidence contracts by Jason Stys. Types: Settings, Sample, Event, Run.
+- `web/vite.config.ts` — /** Local production asset build by Jason Stys. Configuration variables: docs/CODE_INDEX.md. */
+- `docs/CODE_INDEX.md` — Generated exact-line source inventory.
+- `docs/FILE_CATALOG.md` — This generated complete file index.

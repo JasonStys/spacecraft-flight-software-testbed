@@ -1,0 +1,15 @@
+.venv
+.runtime
+node_modules
+web/dist
+native-build
+native-sanitize
+native-coverage
+dist
+build
+test-results
+playwright-report
+requirements*.lock
+package-lock.json
+docs/CODE_INDEX.md
+docs/FILE_CATALOG.md
