@@ -22,6 +22,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/VALIDATION.md` — # Validation and test evidence
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/images/recovery.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/CI_BASELINE.md` — # First published CI baseline
 - `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
 - `flightlab/__init__.py` — """Software-only executive evidence application by Jason Stys; see docs/CODE_INDEX.md."""
 - `flightlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.

@@ -1,6 +1,6 @@
 # Validation and test evidence
 
-By Jason Stys. Local results recorded 2026-10-20. GitHub CI/release evidence is added after actual execution; planned gates are not claimed as completed runs.
+By Jason Stys. Local results recorded 2026-10-20. The [first published CI baseline](reports/CI_BASELINE.md) records actual completed GitHub runs and measured native coverage. Exact final source checks also gate the portable release.
 
 ## Local results
 
@@ -37,7 +37,7 @@ By Jason Stys. Local results recorded 2026-10-20. GitHub CI/release evidence is 
 
 ## CI gates
 
-Validation has10jobs: four Python/OS combinations (Linux3.12/3.14, Windows/macOS3.14), one Chromium/Firefox/WebKit integration job, three native bundle jobs, one ASan+UBSan job and one GCC coverage job. CodeQL has3 language jobs with security-and-quality queries. Python and npm dependency audits execute; workflows are pinned, least-privilege scoped, and no new Actions artifacts/caches are created. Exact run links/results will be recorded after first pass.
+Validation has10jobs: four Python/OS combinations (Linux3.12/3.14, Windows/macOS3.14), one Chromium/Firefox/WebKit integration job, three native bundle jobs, one ASan+UBSan job and one GCC coverage job. CodeQL has3 language jobs with security-and-quality queries. Python and npm dependency audits execute; workflows are pinned, least-privilege scoped, and no new Actions artifacts/caches are created. Actual run links, results and native line/branch coverage are in [CI_BASELINE](reports/CI_BASELINE.md). Release preparation separately requires passing workflows at its exact source SHA.
 
 ## Interpretation and limits
 

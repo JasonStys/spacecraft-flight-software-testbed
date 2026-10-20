@@ -1,26 +1,34 @@
 /* Deterministic executive, supervisor and simulated ports by Jason Stys.
- * Class: Executive. Functions: validate, mode_name, make_command, dispatch, simulate.
+ * Class: Executive. Functions: require_choice, validate, mode_name, make_command, dispatch, simulate.
  * Variables: logical clock, heartbeat, checkpoint, progress and observer counters.
  * Contracts and exact line inventory: docs/CODE_INDEX.md. Not an RTOS or flight distribution.
  */
 #include "core.hpp"
 #include <algorithm>
 #include <array>
+#include <initializer_list>
 #include <optional>
 #include <stdexcept>
 
 namespace flight {
+namespace {
+/** Check one finite integer domain without coupling unrelated configuration error paths. */
+void require_choice(int value, std::initializer_list<int> choices) {
+    if (std::find(choices.begin(), choices.end(), value) == choices.end())
+        throw std::invalid_argument("Unsupported software-only experiment setting");
+}
+} // namespace
 /** Bound both native and public execution; scientific units and hardware addresses are absent. */
 void validate(const Config& config) {
     const std::array<std::string, 7> scenarios{"nominal", "watchdog-hang", "sensor-stale",
         "telemetry-gap", "checkpoint-corrupt", "brownout", "command-corrupt"};
-    if (std::find(scenarios.begin(), scenarios.end(), config.scenario) == scenarios.end() ||
-        (config.duration != 240 && config.duration != 480) ||
-        (config.fault_tick != 80 && config.fault_tick != 120 && config.fault_tick != 160) ||
-        (config.watchdog != 3 && config.watchdog != 5 && config.watchdog != 8) ||
-        (config.checkpoint_period != 4 && config.checkpoint_period != 8 && config.checkpoint_period != 16) ||
-        (config.sample_period != 2 && config.sample_period != 4))
+    if (std::find(scenarios.begin(), scenarios.end(), config.scenario) == scenarios.end())
         throw std::invalid_argument("Unsupported software-only experiment");
+    require_choice(config.duration, {240, 480});
+    require_choice(config.fault_tick, {80, 120, 160});
+    require_choice(config.watchdog, {3, 5, 8});
+    require_choice(config.checkpoint_period, {4, 8, 16});
+    require_choice(config.sample_period, {2, 4});
 }
 
 /** Convert only known internal states; callers cannot smuggle labels into generated JSON. */
