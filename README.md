@@ -5,6 +5,8 @@
 
 **Break a task. Prove recovery.** A deterministic C++20 executive, software-only device ports and a TypeScript mission-assurance console by [Jason Stys](https://github.com/JasonStys).
 
+Inspect the [recovery observability audit](docs/OBSERVABILITY.md): onboard mode/boot/counter changes, actual received confirmations, delays and events hidden between packets. Received witnesses never become invented exact transition times, and missing confirmation never proves no occurrence.
+
 Inject a hung task, stale sensor, missing telemetry, bad checkpoint, low-power index or corrupt command. Inspect the exact reset deadline, latched SAFE mode, checkpoint restore, lost volatile work and explicit return to science. Replay every frame against an identical-setting nominal reference and export the evidence.
 
 This is an original educational implementation—not an RTOS, cFS/NOS3 distribution, flight-qualified system, real spacecraft controller, guidance/targeting system or hardware interface. All inputs are synthetic. Logical ticks are not seconds; sensor/power indexes are not physical measurements. SAFE is a software-state label, not a real-world safety assertion.

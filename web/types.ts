@@ -45,6 +45,16 @@ export interface Run {
   settings: Settings;
   experiment: Series;
   reference: Series;
+  observability: {
+    field: string;
+    before: string | number;
+    after: string | number;
+    onboard_tick: number;
+    received_confirmation_tick: number | null;
+    last_received_before_change: number | null;
+    confirmation_delay_ticks: number | null;
+    status: string;
+  }[];
   summary: Record<string, number>;
   provenance: { trajectory_sha256: string; worker_sha256: string; clock: string };
 }

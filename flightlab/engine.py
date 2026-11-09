@@ -13,6 +13,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from flightlab.observability import observability
+
 SCENARIOS = {
     "nominal": "Healthy executive and a deliberate duplicate command",
     "watchdog-hang": "Hung task, independent watchdog reset and checkpoint restore",
@@ -190,6 +192,7 @@ def build_run(settings: Settings) -> dict[str, Any]:
         "settings": asdict(settings),
         "experiment": experiment,
         "reference": reference,
+        "observability": observability(rows),
         "summary": {
             "resets": last["boot"] - 1,
             "lost_payloads": last["lost_payloads"],

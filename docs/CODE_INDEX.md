@@ -37,66 +37,83 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 16 | `variable SCENARIOS` |
-| 25 | `variable CHOICES` |
-| 32 | `variable FIELDS` |
-| 53 | `variable EVENTS` |
-| 73 | `definition Settings` |
-| 76 | `variable scenario` |
-| 77 | `variable duration` |
-| 78 | `variable fault_tick` |
-| 79 | `variable watchdog` |
-| 80 | `variable checkpoint_period` |
-| 81 | `variable sample_period` |
-| 83 | `definition __post_init__` |
-| 83 | `parameter self` |
-| 87 | `variable choices` |
-| 87 | `variable key` |
-| 88 | `variable value` |
-| 93 | `definition catalog` |
-| 98 | `definition binary_path` |
-| 100 | `variable root` |
-| 101 | `variable suffix` |
-| 102 | `variable folder` |
-| 110 | `definition canonical` |
-| 110 | `parameter value` |
-| 115 | `definition run_id` |
-| 115 | `parameter run` |
-| 117 | `variable k` |
-| 117 | `variable v` |
-| 120 | `definition validate_worker` |
-| 120 | `parameter data` |
-| 120 | `parameter settings` |
-| 124 | `variable events` |
-| 124 | `variable rows` |
-| 127 | `variable bool_fields` |
-| 128 | `variable row` |
-| 128 | `variable tick` |
-| 131 | `variable key` |
-| 131 | `variable value` |
-| 132 | `variable valid` |
-| 147 | `variable previous` |
-| 148 | `variable event` |
-| 160 | `variable previous` |
-| 165 | `definition execute` |
-| 165 | `parameter fingerprint` |
-| 165 | `parameter settings` |
-| 168 | `variable command` |
-| 168 | `variable k` |
-| 170 | `variable result` |
-| 178 | `definition build_run` |
-| 178 | `parameter settings` |
-| 180 | `variable source` |
-| 181 | `variable fingerprint` |
-| 182 | `variable experiment` |
-| 183 | `variable reference_settings` |
-| 184 | `variable reference` |
-| 185 | `variable rows` |
-| 186 | `variable last` |
-| 187 | `variable run` |
-| 199 | `variable row` |
-| 200 | `variable row` |
-| 201 | `variable row` |
+| 18 | `variable SCENARIOS` |
+| 27 | `variable CHOICES` |
+| 34 | `variable FIELDS` |
+| 55 | `variable EVENTS` |
+| 75 | `definition Settings` |
+| 78 | `variable scenario` |
+| 79 | `variable duration` |
+| 80 | `variable fault_tick` |
+| 81 | `variable watchdog` |
+| 82 | `variable checkpoint_period` |
+| 83 | `variable sample_period` |
+| 85 | `definition __post_init__` |
+| 85 | `parameter self` |
+| 89 | `variable choices` |
+| 89 | `variable key` |
+| 90 | `variable value` |
+| 95 | `definition catalog` |
+| 100 | `definition binary_path` |
+| 102 | `variable root` |
+| 103 | `variable suffix` |
+| 104 | `variable folder` |
+| 112 | `definition canonical` |
+| 112 | `parameter value` |
+| 117 | `definition run_id` |
+| 117 | `parameter run` |
+| 119 | `variable k` |
+| 119 | `variable v` |
+| 122 | `definition validate_worker` |
+| 122 | `parameter data` |
+| 122 | `parameter settings` |
+| 126 | `variable events` |
+| 126 | `variable rows` |
+| 129 | `variable bool_fields` |
+| 130 | `variable row` |
+| 130 | `variable tick` |
+| 133 | `variable key` |
+| 133 | `variable value` |
+| 134 | `variable valid` |
+| 149 | `variable previous` |
+| 150 | `variable event` |
+| 162 | `variable previous` |
+| 167 | `definition execute` |
+| 167 | `parameter fingerprint` |
+| 167 | `parameter settings` |
+| 170 | `variable command` |
+| 170 | `variable k` |
+| 172 | `variable result` |
+| 180 | `definition build_run` |
+| 180 | `parameter settings` |
+| 182 | `variable source` |
+| 183 | `variable fingerprint` |
+| 184 | `variable experiment` |
+| 185 | `variable reference_settings` |
+| 186 | `variable reference` |
+| 187 | `variable rows` |
+| 188 | `variable last` |
+| 189 | `variable run` |
+| 202 | `variable row` |
+| 203 | `variable row` |
+| 204 | `variable row` |
+
+## flightlab/observability.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 10 | `definition observability` |
+| 10 | `parameter rows` |
+| 17 | `variable result` |
+| 18 | `variable index` |
+| 18 | `variable row` |
+| 19 | `variable previous` |
+| 20 | `variable field` |
+| 25 | `variable confirmation` |
+| 26 | `variable candidate` |
+| 36 | `variable confirmation` |
+| 38 | `variable last_received` |
+| 39 | `variable p` |
 
 ## flightlab/reports.py
 
@@ -679,6 +696,39 @@ Line numbers refer to formatted source, not this generated document.
 | 283 | `parameter k` |
 | 283 | `parameter p` |
 
+## tests/test_observability.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 13 | `definition frame` |
+| 14 | `parameter boot` |
+| 14 | `parameter delivered` |
+| 14 | `parameter mode` |
+| 14 | `parameter rejected` |
+| 14 | `parameter tick` |
+| 29 | `definition test_hidden_modes_counter_threshold_and_reset_boundary` |
+| 31 | `variable rows` |
+| 41 | `variable result` |
+| 42 | `variable hidden` |
+| 42 | `variable item` |
+| 44 | `variable count` |
+| 45 | `variable item` |
+| 49 | `variable boot` |
+| 49 | `variable item` |
+| 51 | `variable item` |
+| 51 | `variable last` |
+| 55 | `definition test_absent_previous_downlink_and_no_changes` |
+| 59 | `variable row` |
+| 62 | `variable reset` |
+| 70 | `variable item` |
+| 70 | `variable old_counter` |
+| 74 | `definition test_native_reset_and_cumulative_rejection_have_real_witnesses` |
+| 76 | `variable scenario` |
+| 77 | `variable run` |
+| 78 | `variable item` |
+| 79 | `variable tick` |
+| 81 | `variable observed` |
+
 ## tests/ui.spec.ts
 
 | Line | Definition / variable / structural identifier |
@@ -687,15 +737,16 @@ Line numbers refer to formatted source, not this generated document.
 | 10 | `scrub` |
 | 18 | `load` |
 | 23 | `choose` |
-| 62 | `format` |
-| 63 | `pending` |
-| 65 | `download` |
-| 66 | `path` |
-| 68 | `body` |
-| 90 | `chooseFailure` |
-| 100 | `index` |
-| 104 | `before` |
-| 122 | `scan` |
+| 39 | `run` |
+| 80 | `format` |
+| 81 | `pending` |
+| 83 | `download` |
+| 84 | `path` |
+| 86 | `body` |
+| 108 | `chooseFailure` |
+| 118 | `index` |
+| 122 | `before` |
+| 140 | `scan` |
 
 ## tools/build_native.py
 
@@ -978,23 +1029,29 @@ Line numbers refer to formatted source, not this generated document.
 | 160 | `title` |
 | 161 | `value` |
 | 167 | `formatName` |
-| 191 | `animate` |
-| 197 | `steps` |
-| 199 | `tick` |
-| 207 | `frame` |
-| 210 | `configure` |
-| 216 | `start` |
-| 218 | `response` |
-| 220 | `catalog` |
-| 224 | `value` |
-| 225 | `raw` |
-| 227 | `raw` |
-| 234 | `load` |
-| 244 | `load` |
-| 251 | `tick` |
-| 261 | `frame` |
-| 265 | `controller` |
-| 275 | `start` |
+| 172 | `audit` |
+| 174 | `audit` |
+| 180 | `heading` |
+| 182 | `note` |
+| 186 | `item` |
+| 187 | `row` |
+| 210 | `animate` |
+| 216 | `steps` |
+| 218 | `tick` |
+| 226 | `frame` |
+| 229 | `configure` |
+| 235 | `start` |
+| 237 | `response` |
+| 239 | `catalog` |
+| 243 | `value` |
+| 244 | `raw` |
+| 246 | `raw` |
+| 253 | `load` |
+| 263 | `load` |
+| 270 | `tick` |
+| 280 | `frame` |
+| 284 | `controller` |
+| 294 | `start` |
 
 ## web/model.test.ts
 
@@ -1328,12 +1385,21 @@ Line numbers refer to formatted source, not this generated document.
 | 45 | `settings` |
 | 46 | `experiment` |
 | 47 | `reference` |
-| 48 | `summary` |
-| 49 | `provenance` |
-| 51 | `Catalog` |
-| 52 | `scenarios` |
-| 53 | `choices` |
-| 54 | `defaults` |
+| 48 | `observability` |
+| 49 | `field` |
+| 50 | `before` |
+| 51 | `after` |
+| 52 | `onboard_tick` |
+| 53 | `received_confirmation_tick` |
+| 54 | `last_received_before_change` |
+| 55 | `confirmation_delay_ticks` |
+| 56 | `status` |
+| 58 | `summary` |
+| 59 | `provenance` |
+| 61 | `Catalog` |
+| 62 | `scenarios` |
+| 63 | `choices` |
+| 64 | `defaults` |
 
 ## web/vite.config.ts
 

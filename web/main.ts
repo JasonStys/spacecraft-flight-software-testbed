@@ -169,6 +169,25 @@ async function load(): Promise<void> {
         `/api/report?${query}&format=${formatName}`;
     text("fingerprint", `Evidence ${run.id}\nTrajectory ${run.provenance.trajectory_sha256}`);
     element("results").hidden = false;
+    let audit = document.getElementById("observability");
+    if (!audit) {
+      audit = document.createElement("section");
+      audit.id = "observability";
+      audit.className = "panel";
+      element("results").append(audit);
+    }
+    audit.replaceChildren();
+    const heading = document.createElement("h2");
+    heading.textContent = "Recovery observability audit";
+    const note = document.createElement("p");
+    note.textContent =
+      "Complete-run synthetic truth versus received evidence, independent of the replay cursor and perspective. A short mode can occur entirely between packets. Counter confirmation means at least that value was received, not the exact increment time. No confirmation is not proof of no occurrence; hidden intermediate modes remain possible.";
+    audit.append(heading, note);
+    for (const item of run.observability) {
+      const row = document.createElement("p");
+      row.textContent = `${item.field}: ${item.before} → ${item.after} onboard at T+${item.onboard_tick}; ${item.received_confirmation_tick === null ? "not observed before the mode/boot/window boundary" : `received confirmation T+${item.received_confirmation_tick} (delay ${item.confirmation_delay_ticks} ticks); last received before change ${item.last_received_before_change ?? "none"}`}.`;
+      audit.append(row);
+    }
     chart();
     ledger();
     text(
