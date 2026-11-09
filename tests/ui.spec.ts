@@ -27,6 +27,24 @@ async function choose(page: Page, scenario: string): Promise<void> {
     `deterministic ${scenario} replay`,
   );
 }
+test("full-run recovery audit distinguishes onboard changes from downlink witnesses", async ({
+  page,
+  request,
+}) => {
+  await load(page);
+  await choose(page, "watchdog-hang");
+  await expect(page.locator("#observability")).toContainText("Complete-run synthetic truth");
+  await expect(page.locator("#observability")).toContainText("boot: 1 → 2");
+  await expect(page.locator("#observability")).toContainText("received confirmation");
+  const run = await (await request.get("/api/run?scenario=watchdog-hang")).json();
+  expect(
+    run.observability.some(
+      (row: { field: string; after: number }) => row.field === "boot" && row.after === 2,
+    ),
+  ).toBe(true);
+  await page.locator("#perspective").selectOption("ground");
+  await expect(page.locator("#observability")).toContainText("independent of the replay cursor");
+});
 test("real native defaults, recovery and defaults reset", async ({ page }) => {
   await load(page);
   await expect(page.locator("#sensor")).toHaveText("Unavailable");

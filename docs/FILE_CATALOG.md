@@ -15,6 +15,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/API.md` — # Local API and evidence schema
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
 - `docs/EXECUTIVE.md` — # Executive model and limits
+- `docs/OBSERVABILITY.md` — # Review recovery observability
 - `docs/RELEASE.md` — # Release, operation and rollback
 - `docs/SECURITY.md` — # Security and privacy boundaries
 - `docs/THIRD_PARTY.md` — # References and license notices
@@ -23,10 +24,12 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/images/recovery.jpg` — Binary screenshot asset from local application validation
 - `docs/reports/CI_BASELINE.md` — # First published CI baseline
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Recovery observability validation — 2026-11-09
 - `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
 - `flightlab/__init__.py` — """Software-only executive evidence application by Jason Stys; see docs/CODE_INDEX.md."""
 - `flightlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `flightlab/engine.py` — """Bounded native worker bridge and deterministic evidence by Jason Stys.
+- `flightlab/observability.py` — """Synthetic executive recovery observability review by Jason Stys.
 - `flightlab/reports.py` — """Portable JSON/CSV/HTML evidence and transactional history by Jason Stys.
 - `flightlab/resources/history.sql` — -- Immutable local experiment history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
 - `flightlab/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
@@ -48,6 +51,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
 - `tests/test_engine.py` — """Independent executive, failure-boundary and replay contracts by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
+- `tests/test_observability.py` — """Independent synthetic state/downlink witness traces by Jason Stys.
 - `tests/ui.spec.ts` — /* Production-browser integration and accessibility tests by Jason Stys.
 - `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
 - `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
