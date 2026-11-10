@@ -1,6 +1,6 @@
 # Software-only executive by Jason Stys. Targets/options and variables: docs/CODE_INDEX.md.
 cmake_minimum_required(VERSION 3.28)
-project(SpacecraftFlightTestbed VERSION 1.0.0 LANGUAGES CXX)
+project(SpacecraftFlightTestbed VERSION 1.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
