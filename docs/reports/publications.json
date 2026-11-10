@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "project": "spacecraft-flight-software-testbed",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+  "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842",
+  "functionalEvidenceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42752160117,
+      "event": "push",
+      "headSha": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42752160159,
+      "event": "push",
+      "headSha": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159"
+    }
+  ],
+  "summary": "The released 1.1.0 portable app brings the recovery-observability review into a source-bound downloadable bundle: compare onboard transitions with received confirmation, then export the same evidence shown in the UI.",
+  "rationale": "The original deterministic C++ executive and Python replay oracle remain intact. Versioned archives, native-safe POSIX packaging and an extracted-executable Chromium journey make the new received-witness feature reviewable beyond a source checkout. An independent boot/reset oracle and downloaded JSON comparison prevent a static page or source-service fallback from passing acceptance.",
+  "limitations": [
+    "Educational software-only executive; no flight hardware, operational SAFE assertion or mission qualification.",
+    "Unsigned portable folder, not an installer or clean-machine installation proof. Exact-source three-OS builds and asset digests require publication review.",
+    "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 90755,
+      "sha256": "f02a3966fdd2a1342211fefe8be310ee19f0f9f924ae5691c50cd6fcc10255c9",
+      "sourceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 5,
+        "renderedPageSha256": {
+          "page-1.png": "10bb45d78afbf0182cc699408eaa628c19c282966034f23b89b815d562aa0d73",
+          "page-2.png": "6c845567c25f4bb10ce5149483195550132686c8851f6dec2c708f59112d50c2",
+          "page-3.png": "0336cedc629affb4ea2264835295e8e5e0dcd52e8fe3c66879953f49c2676f3b",
+          "page-4.png": "f46b1b567988c77c9ec815e1de8f0f119f86b688e8128895283a29bde6039825",
+          "page-5.png": "b0c979e9a61f1b19aa432446af8377f71a19bdb914e0805ab8cfcfed2082e1c7"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 42146,
+      "sha256": "b0d8f6411d24d71f7a92a1161964f94dbb4552abe08fd6e64ba610273c7cf270",
+      "sourceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 3,
+        "renderedPageSha256": {
+          "page-1.png": "dafccc04b75a783fe6fc7a8f810b936a5c8f1a53f350dc10e6181013460f6e63",
+          "page-2.png": "83f21ff608ac8676cb954dac4ac6644ca49eacf8f46fad812ca660c39f5addd4",
+          "page-3.png": "59cb6539cd4950638f47595c49b7a351012388e97b5c9a31e7a0652efffa4f68"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7390,
+      "sha256": "68f990ad988d3e9d859d50207771594b6be0459899b733b5fc32df600f48aa7d",
+      "sourceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Workflow evidence", "Test sources"],
+        "previewSha256": {
+          "workflow-evidence.png": "299f46015b9435efbafacde9a5d31fbf660ee7b26c8e8b0149add06df592a8e3",
+          "test-sources.png": "1a4a68b781f87ae9c89384871d149042de999171e6b1625e876be26faf749f27"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C17",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}

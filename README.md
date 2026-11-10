@@ -93,3 +93,9 @@ CI also runs Clang ASan+UBSan, GCC native line coverage, dependency audits, Code
 [User guide](docs/USER_GUIDE.md) · [Executive model](docs/EXECUTIVE.md) · [Architecture/ADRs](docs/ARCHITECTURE.md) · [API](docs/API.md) · [Security](docs/SECURITY.md) · [Validation](docs/VALIDATION.md) · [Release/rollback](docs/RELEASE.md) · [References/licenses](docs/THIRD_PARTY.md).
 
 For questions or defects, open a repository issue with the scenario/settings and expected vs observed behavior. For private security concerns, follow [SECURITY](docs/SECURITY.md). Do not post credentials or private operational telemetry. MIT licensed; created by Jason Stys. No agency or vendor endorsement is implied.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
