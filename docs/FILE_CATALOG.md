@@ -21,13 +21,19 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/THIRD_PARTY.md` — # References and license notices
 - `docs/USER_GUIDE.md` — # User guide
 - `docs/VALIDATION.md` — # Validation and test evidence
+- `docs/handbook.md` — Documentation entry point, edition boundaries and reproducible usage/design/security/test references.
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/images/recovery.jpg` — Binary screenshot asset from local application validation
 - `docs/releases/v1.1.0.md` — # Version 1.1.0 portable application
 - `docs/reports/CI_BASELINE.md` — # First published CI baseline
 - `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Recovery observability validation — 2026-11-09
+- `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
+- `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
+- `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
 - `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
+- `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
+- `docs/reports/validation-review.docx` — Reviewed Word validation observations with explicit test and analysis limits.
 - `flightlab/__init__.py` — """Software-only executive evidence application by Jason Stys; see docs/CODE_INDEX.md."""
 - `flightlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `flightlab/engine.py` — """Bounded native worker bridge and deterministic evidence by Jason Stys.
@@ -58,6 +64,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_observability.py` — """Independent synthetic state/downlink witness traces by Jason Stys.
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
+- `tests/test_publication_text.py` — """Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content.
 - `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/ui.spec.ts` — /* Production-browser integration and accessibility tests by Jason Stys.
 - `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
@@ -67,6 +74,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
 - `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
 - `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/publication_text.py` — """Jason Stys: inspect only named reviewed Office editions without hiding their XML.
 - `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
 - `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
 - `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
