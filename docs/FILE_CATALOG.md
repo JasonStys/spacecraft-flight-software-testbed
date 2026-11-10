@@ -30,6 +30,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Recovery observability validation — 2026-11-09
 - `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
 - `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
+- `docs/reports/publication-package-boundary-2026-11-10.md` — # Reviewed Office package boundary — November 10, 2026
 - `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
 - `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
 - `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
