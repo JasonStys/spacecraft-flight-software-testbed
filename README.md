@@ -13,7 +13,9 @@ This is an original educational implementation—not an RTOS, cFS/NOS3 distribut
 
 ## Try it
 
-For a prebuilt desktop app, download the matching Windows/Linux/macOS ZIP from [Releases](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases), verify its SHA-256, extract the **whole folder**, and launch `SpacecraftFlightTestbed` (`.exe` on Windows). It opens the local website in your browser. No account, Python/Node installation, cloud service or administrator access is needed. Builds are unsigned; never disable OS protections. Stop the console with Ctrl+C. Mobile browsers can display the responsive UI, but no phone-native executable is supplied and the loopback service is deliberately not shared over a network.
+For a prebuilt desktop app, choose the matching version, OS and CPU from [Releases](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases). Version 1.1 uses **Windows ZIP** and **Linux/macOS tar.gz**, preserving POSIX executable modes and internal links. Verify SHA-256, extract the **whole folder**, inspect `RELEASE.json` and launch `SpacecraftFlightTestbed` (`.exe` on Windows). It opens the local website in your browser. Ordinary use needs no account, Python/Node installation, cloud service or administrator access. Builds are unsigned; retain OS protections. Stop the console with Ctrl+C. Mobile browsers can display the responsive UI, but no phone-native executable is supplied and the loopback service is deliberately not shared over a network.
+
+The [1.1 package notes](docs/releases/v1.1.0.md) describe the recovery-observability update and extracted-app acceptance. Older 1.0 downloads predate that workflow. These are portable folders, not installers; a successful launch is not a clean-machine installation claim.
 
 Source development requires Python 3.12–3.14, Node 24 and a C++20 toolchain (MSVC 2022/2026, GCC or Clang). The pinned CMake build dependency is installed below.
 

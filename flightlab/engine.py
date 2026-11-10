@@ -13,6 +13,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from flightlab import __version__
 from flightlab.observability import observability
 
 SCENARIOS = {
@@ -208,7 +209,7 @@ def build_run(settings: Settings) -> dict[str, Any]:
         },
         "provenance": {
             "author": "Jason Stys",
-            "version": "1.0.0",
+            "version": __version__,
             "clock": "logical ticks",
             "worker_sha256": fingerprint,
             "trajectory_sha256": hashlib.sha256(canonical(experiment)).hexdigest(),
