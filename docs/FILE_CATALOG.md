@@ -52,6 +52,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
 - `requirements.in` — Standard-library-only Python runtime declaration (no third-party runtime packages).
 - `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
+- `tests/test_draft_lookup.py` — """Independent real-shape draft API contract fixtures by Jason Stys.
 - `tests/test_engine.py` — """Independent executive, failure-boundary and replay contracts by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_observability.py` — """Independent synthetic state/downlink witness traces by Jason Stys.
@@ -60,6 +61,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/ui.spec.ts` — /* Production-browser integration and accessibility tests by Jason Stys.
 - `tools/build_native.py` — """Cross-platform C++ build/test orchestration by Jason Stys.
+- `tools/draft_lookup.py` — """Bounded authenticated draft lookup by Jason Stys.
 - `tools/native_browser.mjs` — /**
 - `tools/native_feature_smoke.mjs` — /**
 - `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
