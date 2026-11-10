@@ -1,10 +1,17 @@
 # Jason Stys: stdlib runtime, bounded synthetic models and strict verification policy.
 [project]
 name = "spacecraft-flight-software-testbed"
-version = "1.0.0"
+version = "1.1.0"
 description = "Software-only deterministic spacecraft executive, faults and restart evidence by Jason Stys"
 requires-python = ">=3.12,<3.15"
 dependencies = []
+
+[tool.portable]
+package = "flightlab"
+executable = "SpacecraftFlightTestbed"
+title = "Spacecraft Flight Software Testbed"
+workflows = ["validate.yml", "codeql.yml"]
+
 [tool.ruff]
 target-version = "py312"
 line-length = 100

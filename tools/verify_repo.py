@@ -29,7 +29,7 @@ SKIP = {
     "test-results",
     "playwright-report",
 }
-SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp"}
+SOURCE_SUFFIXES = {".py", ".ts", ".mjs", ".css", ".html", ".sql", ".cpp", ".hpp"}
 FILE_PURPOSES = {
     "docs/reports/replay-contracts.json": "Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.",
     ".gitattributes": "Normalize source text to LF and preserve binary screenshot assets.",
