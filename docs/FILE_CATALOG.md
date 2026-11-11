@@ -29,12 +29,17 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Recovery observability validation — 2026-11-09
 - `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
+- `docs/reports/installed-windows-2026-11-10.md` — # Installed Windows application validation — 10 November 2026
 - `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
 - `docs/reports/publication-package-boundary-2026-11-10.md` — # Reviewed Office package boundary — November 10, 2026
 - `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
 - `docs/reports/replay-contracts.json` — Reviewed default-scenario summaries and platform-independent deterministic integer replay hashes.
 - `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
 - `docs/reports/validation-review.docx` — Reviewed Word validation observations with explicit test and analysis limits.
+- `docs/reports/windows-application-guide.docx` — Individually reviewed installed-app guide with real screenshots, worked workflow, source excerpts and operating limits.
+- `docs/reports/windows-application-guide.json` — Exact illustrated-guide, screenshot and rendered-page identities plus bounded validation observations.
+- `docs/screenshots/windows-application/01-recovery-witness.png` — Binary screenshot asset from local application validation
+- `docs/screenshots/windows-application/02-nominal-reference.png` — Binary screenshot asset from local application validation
 - `flightlab/__init__.py` — """Software-only executive evidence application by Jason Stys; see docs/CODE_INDEX.md."""
 - `flightlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `flightlab/engine.py` — """Bounded native worker bridge and deterministic evidence by Jason Stys.
