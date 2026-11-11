@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "repository": "spacecraft-flight-software-testbed",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+  "createdAt": "2026-11-10T23:54:19.667Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "5b539f1236e4e55781d04050e4e9795a997c30cc744e8884b86845c13dc11c40",
+  "screenshots": [
+    {
+      "file": "01-recovery-witness.png",
+      "sha256": "8dbcaf6380410a967d7bd8dc2675c13ecf7ab0e85f39b6d05e562be8326dab48",
+      "width": 1264,
+      "height": 537,
+      "caption": "Actual installed application showing watchdog-hang recovery witness. Captured during the accepted native user journey with prepared synthetic inputs."
+    },
+    {
+      "file": "02-nominal-reference.png",
+      "sha256": "81adf1ad8995f95a2671f91f5e6af81c6a69a64a8b66e6b2847c7da917eaa39e",
+      "width": 1264,
+      "height": 723,
+      "caption": "Actual installed application showing nominal reset-free reference. Captured during the accepted native user journey with prepared synthetic inputs."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "flightlab/observability.py",
+      "first": 25,
+      "last": 37,
+      "sha256": "8c32f47cb75173d4fed5315b37e11d8c0841bd895788c5b91421d4dc27e6f10d",
+      "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/flightlab/observability.py#L25"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "The watchdog scenario produced one reset and a received boot-change witness. Nominal produced none; export matched the displayed complete run.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:39:06.635338+00:00",
+    "reviewers": ["root"],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "a030dc5ac7a0562929e1bd16ff6fc78342d8e55a809495c55742760e51bb9b9d",
+      "2": "d4a05f1e26af62b031de42fda8a7bf1ba8a23b052197ef12c1a7f750deb8973d",
+      "3": "6f3ac0cc30ce44d7ba78d499149ecdb04e0ffd6272c6d3253ff2bdca4cf4de3e",
+      "4": "e78fd3037ab0927cc426ae70c3dc6a8394fc1dbffb70487bc18b9b513810e9d0"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}
